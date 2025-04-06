@@ -1,14 +1,24 @@
 ---
 import '../styles/global.css';
-
+import Navigation from '../components/Navigation.astro';
 const tituloPagina = "Sobre mi";
 
+const fechaActual = new Date();
+const cumpleaños = new Date(2002, 6, 26);
+let age = fechaActual.getFullYear() - cumpleaños.getFullYear();
+const noCumpleaños = fechaActual.getMonth() < cumpleaños.getMonth() || (fechaActual.getMonth() === cumpleaños.getMonth() && fechaActual.getDate() < cumpleaños.getDate());
+
+if(noCumpleaños){
+	age--;
+}
 const identify = {
     firstName: "Yerri",
     country: "Peru",
     occupation: "Developer",
-    hobbies: ["futbol", "box", "musica", "ejercicio"]
+    hobbies: ["futbol", "box", "musica", "ejercicio", "💻 Crear proyectos web", "🍳 Cocinar"],
+	yearOld: age
 };
+
 
 const skills = ["HTML", "CSS", "JavaScript", "PHP", "Astro"];
 
@@ -16,7 +26,7 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "red";
+const skillColor = "darkblue";
 const fontWeight = "bold";
 const textCase = "lowercase";
 ---
@@ -42,9 +52,7 @@ const textCase = "lowercase";
 		</style>
 	</head>
 	<body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog/">Blog</a>
+        <Navigation />
         <h1> {tituloPagina}</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
 
@@ -52,14 +60,22 @@ const textCase = "lowercase";
 
         <p>Este sitio se irá actualizando a medida que vaya completando más partedes del tutorial, ¡así que no dejes de visitarlo para ver cómo va miviaje!</p>
 
-        <p>Estos son algunos datos sobre mí:</p>
+        <h3>Estos son algunos datos sobre mí:</h3>
         <ul>
-            <li>Me llamo {identify.firstName}</li>
+            <li>Me llamo {identify.firstName}, tengo {identify.yearOld} años.</li>
 			<li>Vivo en {identify.country} y trabajo como {identify.occupation}</li>
 			{identify.hobbies.length >= 2 && 
 				<li> Dos de mis aficiones son: {identify.hobbies[0]} y {identify.hobbies[1]}</li>
 			}
+			<li>Mis pasatiempos son: 
+				<ul>
+					{identify.hobbies.map(hobby => (
+						<li>{hobby}</li>
+					))}
+				</ul>
+			</li>
         </ul>
+
 		<p>Mis habilidades son:</p>
 		<ul>
 			{skills.map(skill => <li class="skill">{skill}</li>)}
