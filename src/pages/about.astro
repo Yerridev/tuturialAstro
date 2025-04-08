@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const tituloPagina = "Sobre mi";
 
@@ -28,34 +26,12 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "darkblue";
+const skillColor = "purple";
 const fontWeight = "bold";
-const textCase = "lowercase";
+const textCase = "uppercase";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{ tituloPagina }</title>
-
-		<style define:vars={{skillColor, fontWeight, textCase}}>
-			h1 {
-				color: purple;
-				font-size: 4rem;
-			}
-			.skill {
-				color: var(--skillColor);
-				font-weight: var(--fontWeight);
-				text-transform: var(--textCase);
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-        <h1> {tituloPagina}</h1>
+<BaseLayout tituloPagina={tituloPagina} skillColor={skillColor} fontWeight={fontWeight} textCase={textCase}>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
 
         <p>Estoy trabajando en el tutorial introductorio de Astro. Este es la segunda página de mi sitio web, ¡y es la primera he construido yo mismo!</p>
@@ -86,11 +62,4 @@ const textCase = "lowercase";
 		{happy && <p>¡Estoy feliz de aprender Astro!</p>}
 		{finished && <p>¡He terminado este tutorial!</p>}
 		{goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p> Mi objetivo no son 3 días.</p>}
-
-		<Footer />
-
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+</BaseLayout>

@@ -1,45 +1,29 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const tituloPagina = 'Blog';
+const skillColor = "purple";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
-<html lang="es">
-	<head>
-		
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{ tituloPagina }</title>
-	</head>
-	<body>
-        <Header />
-        <h1>{ tituloPagina }</h1>
-        <h2>... Te contare todo acá!</h2>
 
-        <h4>Mi experiencia con Astro</h4>
-        <p>Mi viaje siguendo el tutorial de la documentación de Astro.</p>
-        <p>Que estoy aprendiendo</p>
-        <ul>
-            <li>Descarcar dependencias <strong>pnpm create astro@latest</strong></li>
-            <li>Archivo principal es <strong>scr/pages/index.astro</strong></li>
-            <li>La carpete src/pages sirve como router cada archivo dentro de esta carpeta es una pagina.</li>
-        </ul>
+<BaseLayout tituloPagina={tituloPagina} skillColor={skillColor} fontWeight={fontWeight} textCase={textCase}>
+    <h2>... Te contare todo acá!</h2>
 
-        <ul>
-            <li><a href="/posts/post-1/">Publicación 1</a></li>
-            <li><a href="/posts/post-2/">Publicación 2</a></li>
-            <li><a href="/posts/post-3/">Publicación 3</a></li>
-        </ul>
+    <h4>Mi experiencia con Astro</h4>
+    <p>Mi viaje siguendo el tutorial de la documentación de Astro.</p>
+    <p>Que estoy aprendiendo</p>
+    <ul>
+        <li>Descarcar dependencias <strong>pnpm create astro@latest</strong></li>
+        <li>Archivo principal es <strong>scr/pages/index.astro</strong></li>
+        <li>La carpete src/pages sirve como router cada archivo dentro de esta carpeta es una pagina.</li>
+    </ul>
 
-        <Footer />
+    <ul>
+        <li><a href="/posts/post-1/">Publicación 1</a></li>
+        <li><a href="/posts/post-2/">Publicación 2</a></li>
+        <li><a href="/posts/post-3/">Publicación 3</a></li>
+    </ul>
 
-        <script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
-
+</BaseLayout>
