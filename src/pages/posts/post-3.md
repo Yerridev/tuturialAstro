@@ -5,8 +5,8 @@ pubDate: 2025-05-04
 description: 'Este es la tercera publicación de mi nuevo blog Astro.'
 author: 'Yerridev'
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Miniatura de los arcos de Astro."
+  url: "https://docs.astro.build/assets/arc.webp"
+  alt: "Miniatura de los arcos de Astro."
 tags: ["astro", "bloguear", "apnderde en público"]
 ---
 
