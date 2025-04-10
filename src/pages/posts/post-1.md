@@ -7,7 +7,7 @@ author: 'Yerridev'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Logo completo de Astro'
-tags: ["astro", "bloguear", "apnderde en público"]
+tags: ["astro", "bloguear", "apnderde en público", "yerri"]
 ---
 
 
