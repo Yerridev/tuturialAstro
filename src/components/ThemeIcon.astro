@@ -13,7 +13,7 @@
 <style>
     #themeToggle {
         border: 0;
-        backgound: none;
+        background: none;
     }
 
     .sun {fill: black;}
@@ -43,7 +43,7 @@
     window.localStorage.setItem('theme', theme);
 
     const handleToggleClick = () => {
-        const element = document. documentElement;
+        const element = document.documentElement;
         element.classList.toggle("dark");
 
         const isDark = element.classList.contains("dark");
