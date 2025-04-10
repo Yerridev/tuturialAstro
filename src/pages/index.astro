@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from '../components/Greeting';
 const tituloPagina = "Yerri";
 const skillColor = "darkblue";
 const fontWeight = "bold";
@@ -8,4 +9,6 @@ const textCase = "uppercase";
 
 <BaseLayout tituloPagina={tituloPagina} skillColor={skillColor} fontWeight={fontWeight} textCase={textCase}>
 	<h2>Haber que pasa!!!</h2>
+
+	<Greeting client:load messages={["Hey", "Hello", "Hola", "habari"]}/>
 </BaseLayout>
